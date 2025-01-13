@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carte de visite en ligne d'un développeur web">
+    <title>Carte de Visite - Développeur Web</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2a9d8f;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        header p {
+            font-size: 18px;
+        }
+        section {
+            padding: 40px 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .intro, .competences, .contact, .social-links, .realisation {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .intro p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+        .competences h2, .contact h2, .social-links h2, .realisation h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #2a9d8f;
+            font-weight: bold;
+        }
+        .competences ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            font-size: 18px;
+            text-align: left;
+        }
+        .competences li {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .competences li:hover {
+            background-color: #e0f7f1;
+            transform: translateY(-5px);
+        }
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 24px;
+            color: #2a9d8f;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #264653;
+        }
+        .contact form {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact .form-group {
+            margin-bottom: 20px;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .contact input:focus, .contact textarea:focus {
+            border-color: #2a9d8f;
+        }
+        .contact button {
+            background-color: #2a9d8f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact button:hover {
+            background-color: #264653;
+        }
+        footer {
+            background-color: #2a9d8f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .image-container img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .realisation {
+            padding: 40px 20px;
+        }
+        .realisation h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .realisation-carousel {
+            display: flex;
+            overflow-x: scroll;
+            gap: 20px;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+        .realisation-item {
+            min-width: 300px;
+            max-width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .realisation-item:hover {
+            transform: scale(1.05);
+            background-color: #f0f8f7;
+        }
+        .realisation-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .realisation-item h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2a9d8f;
+        }
+        .realisation-item p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Développeur Web</h1>
+        <p>Transformez vos idées en lignes de code !</p>
+    </header>
+
+    <section class="intro">
+        <h2>Bienvenue sur ma carte de visite en ligne !</h2>
+        <p>
+            Vous êtes à la recherche d'un développeur web passionné, compétent et créatif pour donner vie à votre projet ? 
+            Vous êtes au bon endroit. Je suis là pour concevoir des sites web modernes, fonctionnels et optimisés. 
+            Laissez-moi vous accompagner dans la création de votre présence en ligne.
+        </p>
+    </section>
+
+    <div class="image-container">
+        <!-- Remplacez 'votre-image.jpg' par l'URL de votre photo -->
+        <img src="votre-image.jpg" alt="Votre photo" />
+    </div>
+
+    <section class="competences">
+        <h2>Mes compétences</h2>
+        <ul>
+            <li>Développement Frontend (HTML5, CSS3, JavaScript, React)</li>
+            <li>Développement Backend (Node.js, PHP, Python, MySQL)</li>
+            <li>Création de sites responsives et performants</li>
+            <li>Optimisation SEO pour un meilleur référencement</li>
+            <li>Intégration API et services tiers</li>
+            <li>Maintenance et support technique sur mesure</li>
+        </ul>
+    </section>
+
+    <section class="realisation">
+        <h2>Mes réalisations</h2>
+        <p>Voici quelques-uns de mes projets récents. Faites défiler pour découvrir mes réalisations !</p>
+
+        <div class="realisation-carousel">
+            <!-- Projet 1 -->
+            <div class="realisation-item">
+                <img src="projet1.jpg" alt="Projet 1" />
+                <h3>Site E-commerce</h3>
+                <p>Développement d'un site e-commerce avec gestion de produits, panier, et paiement sécurisé.</p>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="realisation-item">
+                <img src="projet2.jpg" alt="Projet 2" />
+                <h3>Application Mobile</h3>
+                <p>Création d'une application mobile pour une gestion efficace des tâches quotidiennes.</p>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="realisation-item">
+                <img src="projet3.jpg" alt="Projet 3" />
+                <h3>Portfolio Personnel</h3>
+                <p>Conception d'un portfolio personnel pour mettre en avant mes compétences et projets.</p>
+            </div>
+
+            <!-- Projet 4 -->
+            <div class="realisation-item">
+                <img src="projet4.jpg" alt="Projet 4" />
+                <h3>Blog Multilingue</h3>
+                <p>Développement d'un blog multilingue avec gestion des articles et commentaires.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Me contacter</h2>
+        <p>Je serais ravi de discuter de vos projets. Remplissez le formulaire ci-dessous pour me contacter :</p>
+
+        <form action="mailto:votre-email@example.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet..." required></textarea>
+            </div>
+            <button type="submit">Envoyer le message</button>
+        </form>
+    </section>
+
+    <section class="social-links">
+        <h2>Suivez-moi sur les réseaux sociaux</h2>
+        <p>Connectons-nous ! Découvrez mes derniers projets et échanges :</p>
+        <a href="https://www.linkedin.com/in/votre-nom" target="_blank">LinkedIn</a>
+        <a href="https://github.com/votre-nom" target="_blank">GitHub</a>
+        <a href="https://twitter.com/votre-nom" target="_blank">Twitter</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Votre Nom - Développeur Web | Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>

@@ -125,5 +125,8 @@ This is also called [Preview Channels](https://firebase.blog/posts/2020/10/previ
 
 ## Accessing Your Site
 
-Once deployed, your site will be live at the Firebase Hosting URL. You can find the URL in the Firebase Console:
-[personal-dev-site-example](https://console.firebase.google.com/project/personal-dev-site-example/overview)
+Once deployed, your site will be live at the Firebase Hosting URL:
+https://personal-dev-site-example-id.web.app or https://personal-dev-site-example-id.firebaseapp.com
+
+You can find the URL in the Firebase Console:
+[firebase](https://console.firebase.google.com/)
